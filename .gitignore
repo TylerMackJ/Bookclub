@@ -1,2 +1,1 @@
-deno.lock
-./fresh.gen.ts
+.env
