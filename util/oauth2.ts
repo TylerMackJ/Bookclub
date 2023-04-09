@@ -58,7 +58,7 @@ export const GitHubProvider = new Provider(
     "https://github.com/login/oauth/authorize",
     "https://github.com/login/oauth/access_token",
     "https://api.github.com",
-    "http://bookclub.tylermackj.com/api/github/callback",
+    "https://bookclub.tylermackj.com/api/github/callback",
     "read:user",
     SEC_IN_YEAR * 10,
 );
