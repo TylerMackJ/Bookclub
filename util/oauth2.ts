@@ -99,7 +99,7 @@ export class OAuth2Data {
             return new OAuth2Data(providers[splitCookie[0]],
                                   splitCookie[1],
                                   splitCookie[2],
-                                  new Date(+splitCookie[2]));
+                                  new Date(+splitCookie[3]));
         } else {
             return null;
         }
