@@ -3,6 +3,8 @@
 import type { Handlers, PageProps } from "$fresh/server.ts";
 import { getCookies } from "std/http/cookie.ts";
 import { OAuth2Data } from "/util/oauth2.ts";
+import LoginButton from "/islands/LoginButton.tsx";
+import LogoutButton from "/islands/LogoutButton.tsx";
 
 interface Data {
     isAllowed: boolean;
@@ -28,21 +30,16 @@ export default function Home({ data }: PageProps<Data>) {
     }
     return (
         <div>
-            <div>
-                <p>
-                    Current time is {(new Date()).toString()}
-                </p>
-                <p>
-                    You currently {data.isAllowed ? "are " : "are not "}
-                    logged in.
-                </p>
-                <p>
-                    Your access token is {accessToken} 
-                </p>
-                <p>
-                    It expires on {expiresOn} 
-                </p>
-            </div>
+            Current time is {(new Date()).toString()}
+            <br />
+            <LoginButton />
+            <LogoutButton />
+            <br />
+            You currently are {data.isAllowed ? "" : "not"} logged in.
+            <br />
+            Your access token is {accessToken}
+            <br /> 
+            It expires on {expiresOn}
         </div>
     );
 }
