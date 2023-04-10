@@ -63,6 +63,18 @@ export const GitHubProvider = new Provider(
     SEC_IN_YEAR * 10,
 );
 
+export const GoogleProvider = new Provider(
+    "Google",
+    "988646830797-8ogjj48aqdnotf88qd9g0n6rbuj9adgm.apps.googleusercontent.com",
+    Deno.env.get("GOOGLE_SECRET"),
+    "https://accounts.google.com/o/oauth2/v2/auth",
+    "https://oauth2.googleapis.com/token",
+    "https://www.googleapis.com",
+    "https://bookclub.tylermackj.com/api/google/callback",
+    "https://www.googleapis.com/auth/userinfo.email",
+    3600,
+);
+
 export function getOAuth2Client(provider: Provider): OAuth2Client {
     return new OAuth2Client({
         clientId: provider.clientId,
